@@ -209,7 +209,8 @@ form.addEventListener('submit', function(evt){
     let formData = {
         name: document.querySelector('input[name="name"]').value,
         email: document.querySelector('input[name="email"]').value,
-        title: document.querySelector('input[name="title"]').value
+        title: document.querySelector('input[name="title"]').value,
+        comment: document.querySelector('textarea[name="comment"]').value
     };
     
     let request = new XMLHttpRequest();
@@ -220,5 +221,5 @@ form.addEventListener('submit', function(evt){
     });
     request.open('POST', 'http://nekitg2i.beget.tech/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    request.send('name=' + encodeURLComponent(formData.name) + 'email=' +  encodeURLComponent(formData.email) + 'title=' +  encodeURLComponent(formData.title));
+    request.send('name=' + encodeURIComponent(formData.name) + '&email=' +  encodeURIComponent(formData.email) + '&title=' +  encodeURIComponent(formData.title) + '&comment=' +  encodeURIComponent(formData.comment));
 });
