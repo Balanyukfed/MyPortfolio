@@ -218,7 +218,7 @@ form.addEventListener('submit', function(evt){
         console.log(request.response);
         alert('Ваша заявка успешно отправлена!!!');
     });
-    request.open('POST', 'nekitg2i.beget.tech/send.php', true);
+    request.open('POST', 'http://nekitg2i.beget.tech/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     request.send('name=' + encodeURLComponent(formData.name) + 'email=' +  encodeURLComponent(formData.email) + 'title=' +  encodeURLComponent(formData.title) + 'comment=' +  encodeURLComponent(formData.comment));
 });
