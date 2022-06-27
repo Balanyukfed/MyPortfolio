@@ -209,8 +209,7 @@ form.addEventListener('submit', function(evt){
         name: document.querySelector('input[name="name"]').value,
         email: document.querySelector('input[name="email"]').value,
         title: document.querySelector('input[name="title"]').value,
-        comment: document.querySelector('input[name="comment"]').value
-    };
+        comment: document.querySelector('input[name="comment"]').value};
     
     let request = new XMLHttpRequest();
     
