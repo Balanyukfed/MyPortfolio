@@ -199,3 +199,26 @@ function trackScroll() {
 		}
 	}
 }
+//======================================================
+let form = document.querySelector('#myForm');
+
+form.addEventListener('submit', function(evt){
+    evt.preventDefault();
+    
+    let formData = {
+        name: document.querySelector('input[name="name"]').value,
+        email: document.querySelector('input[name="email"]').value,
+        title: document.querySelector('input[name="title"]').value,
+        comment: document.querySelector('input[name="comment"]').value
+    };
+    
+    let request = new XMLHttpRequest();
+    
+    request.addEventListener('load',function(){
+        console.log(request.response);
+        alert('Ваша заявка успешно отправлена!!!');
+    });
+    request.open('POST', 'send.php', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send('name=' + encodeURLComponent(formData.name) + 'email=' +  encodeURLComponent(formData.email) + 'title=' +  encodeURLComponent(formData.title) + 'comment=' +  encodeURLComponent(formData.comment));
+});
