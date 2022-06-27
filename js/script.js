@@ -219,5 +219,5 @@ form.addEventListener('submit', function(evt){
     });
     request.open('POST', 'http://nekitg2i.beget.tech/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    request.send('name=' + encodeURLComponent(formData.name) + 'email=' +  encodeURLComponent(formData.email) + 'title=' +  encodeURLComponent(formData.title) + 'comment=' +  encodeURLComponent(formData.comment));
+    request.send('name=' + encodeURLComponent(formData.name) + 'email=' +  encodeURLComponent(formData.email) + 'title=' +  encodeURLComponent(formData.title));
 });
