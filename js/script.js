@@ -208,8 +208,8 @@ form.addEventListener('submit', function(evt){
     let formData = {
         name: document.querySelector('input[name="name"]').value,
         email: document.querySelector('input[name="email"]').value,
-        title: document.querySelector('input[name="title"]').value,
-        comment: document.querySelector('input[name="comment"]').value};
+        title: document.querySelector('input[name="title"]').value
+    };
     
     let request = new XMLHttpRequest();
     
