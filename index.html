@@ -375,13 +375,13 @@
 					</div>
 				</div>
 			</div>
-			<form action="https://nekitg2i.beget.tech" method="post" id="myForm">
+			<form  id="myForm">
 				<div class="back_form">
 					<h2>Связаться со мной</h2>
 					<div class="row">
 						<div class="col">
 							<div class="inputBox">
-								<input type="text" required="required" placeholder="Введите имя"  class="focused" name="name">
+								<input type="text" required="required" placeholder="Введите имя" class="focused" name="name"  maxlength="25">
 								<span class="text">Ваше имя</span>
 								<span class="line"></span>
 							</div>
@@ -390,7 +390,7 @@
 					<div class="row">
 						<div class="col">
 							<div class="inputBox">
-								<input type="text" required="required" placeholder="Введите email"  class="focused" name="email">
+								<input type="text" required="required" placeholder="Введите email" class="focused" name="email"  maxlength="50">
 								<span class="text">Email</span>
 								<span class="line"></span>
 							</div>
@@ -399,7 +399,7 @@
 					<div class="row">
 						<div class="col">
 							<div class="inputBox">
-								<input type="text" required="required" placeholder="Введите тему" class="focused" name="title">
+								<input type="text" required="required" placeholder="Введите тему" class="focused" name="title" maxlength="35">
 								<span class="text">Тема обращения</span>
 								<span class="line"></span>
 							</div>
@@ -408,7 +408,7 @@
 					<div class="row">
 						<div class="col">
 							<div class="inputBox textarea">
-								<textarea required="required"  class="focused" maxlength="250" name="comment"></textarea>
+								<textarea type="text" required="required"  class="focused" maxlength="300" name="comment"></textarea>
 								<span class="text">Комментарий</span>
 								<span class="line"></span>
 							</div>
