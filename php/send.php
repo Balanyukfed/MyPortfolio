@@ -20,24 +20,26 @@
 	$title = trim($title);
 	$comment = trim($comment);
 
-	// if (mail("nekitgraviton2002@gmail.com", 
-	// 		 "Новое письмо с сайта",
-	// 		 "Имя: ".$firstName."\n".
-	// 		 "Email: ".$email."\n".
-	// 		 "Тема: ".$title."\n".
-	// 		 "Комментарий: ".$comment."\n".)
-			
-	// 		) {
-	// 	echo ('Письмо успешно отправлено!');
-	// }
-	// else{
-	// 	echo ('Есть ошибки! Проверьте данные...');
-	// }
-
-	$send = mail("nekitgraviton2002@gmail.com",
-				 $name, $email, $title, $comment, "Content-type:text/plain; charset = UTF-8\r\nFrom:$email");
 	
-	if ($send == 'true') {echo "Сообщение отправлено";}
-// Если письмо не ушло — выводим сообщение об ошибке
-else {echo "Ой, что-то пошло не так";}
+	if (mail("nekitgraviton2002@gmail.com", 
+			 "Новое письмо с сайта",
+			 "Имя: ".$name."\n".
+			 "Email: ".$email."\n".
+			 "Тема: ".$title."\n".
+			 "Комментарий: ".$comment."\n",
+			"Content-type:text/plain; charset = UTF-8")
+			
+			) {
+		echo ('Письмо успешно отправлено!');
+	}
+	else{
+		echo ('Есть ошибки! Проверьте данные...');
+	}
+
+// 	$send = mail("nekitgraviton2002@gmail.com",
+// 				 $name, $email, $title, $comment, "Content-type:text/plain; charset = UTF-8\r\nFrom:$email");
+	
+// 	if ($send == 'true') {echo "Сообщение отправлено";}
+// // Если письмо не ушло — выводим сообщение об ошибке
+// else {echo "Ой, что-то пошло не так";}
 ?>
