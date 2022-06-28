@@ -28,7 +28,7 @@ html, body{
 	color: #fff;
 }
 html{
-	overflow-y: hidden;
+	/*overflow-y: hidden;*/
 }
 input, button, textarea{font-family: inherit;}
 
@@ -207,12 +207,12 @@ header .container{
 }
 .logo{
 	position: absolute;
-	animation: 	logoSwap 2s ease 13.5s forwards;
+	animation: 	logoSwap 2s ease 3.5s /*13.5s*/ forwards;
 }
 .logo_shadow{
 	stroke-dashoffset: 3000;
 	stroke-dasharray: 3000;
-	animation: logo 3s ease 10.5s forwards;
+	animation: logo 3s ease /*10.5s*/ forwards;
 }
 @keyframes logo{
 	0%{
@@ -250,14 +250,15 @@ nav{
 	justify-content: space-between;
 	flex-grow: 1;
 	opacity: 0;
-	animation: nav_animation 2s ease 13.5s forwards;
+	animation: nav_animation 2s ease 3.5s /*13.5s*/ forwards;
 }
 @keyframes nav_animation{
 	to{
 		opacity: 1;
 	}
 }
-.nav_link a{
+.nav_link div{
+	cursor: pointer;
 	color: #fff;
 	opacity: 85%;
 	font-weight: 700;
@@ -266,10 +267,10 @@ nav{
 	overflow: hidden;
 	transition: 0.5s ease;
 }
-.nav_link a:hover{
+.nav_link div:hover{
 	opacity: 1;
 }
-.nav_link a::before{
+.nav_link div::before{
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -281,7 +282,7 @@ nav{
 	transition: 0.5s ease;
 	z-index: 2;
 }
-.nav_link a:hover::before{
+.nav_link div:hover::before{
 	width: 100%;
 	left: 0;
 }
@@ -313,7 +314,7 @@ nav{
 #social circle{
 	stroke-dashoffset: 320;
 	stroke-dasharray: 320;
-	animation: word1_anim 2s ease 13.5s forwards;
+	animation: word1_anim 2s ease 3.5s/*13.5s*/ forwards;
 }
 .header_info{
 	position: absolute;
@@ -343,6 +344,7 @@ nav{
 	line-height: 78px;
 }
 .button_header{
+	cursor: pointer;
 	border: 3px solid #9400D8;
 	border-radius: 3px;
 	width: 220px;
@@ -357,8 +359,8 @@ nav{
 .header_info .header_info_block{
 	transform: translateX(100%);
 	opacity: 0;
-	animation: nav_animation 2s ease-in-out 13.5s forwards,
-	header_info_animation 2s ease 13s forwards;
+	animation: nav_animation 2s ease-in-out 3.5s /*13.5s*/ forwards,
+	header_info_animation 2s ease 3s /*13s*/ forwards;
 }
 @keyframes header_info_animation{
 	to{
@@ -399,7 +401,7 @@ nav{
 	height: 100vh;
 	position: absolute;
 	opacity: 0;
-	animation: nav_animation 2s ease 13.5s forwards;
+	animation: nav_animation 2s ease 3.5s /*13.5s*/ forwards;
 }
 .figur{
 	position: absolute;
@@ -446,6 +448,41 @@ nav{
 	top: 50%;
 	left: 5%;
 }
+@media (min-width: 481px) and (max-width: 1440px){
+	.social{
+		right: 30px;
+		transform: scale(0.8);
+	}
+	@keyframes logoSwap{
+		to{
+			transform: translateX(50%);
+			transition: transform 1s ease;
+			opacity: 0.5;
+		}
+	}
+}
+@media (max-width: 480px){
+	@keyframes logoSwap{
+		to{
+			transform: translateX(0%) translateY(-260px) scale(0.5);
+			transition: transform 2s ease;
+			opacity: 0.8;
+		}	
+	}
+	.social,nav{
+		display: none;
+	}
+	.header_info{
+		top: 35%;
+		transform: scale(0.9) translateX(-50%);
+		left: 50%;
+		overflow: hidden;
+	}
+	.header_info .header_info_block{
+		transform: translateY(100%);	
+	}
+}
+
 /*===============================================================*/
 
 .main_block{
@@ -563,18 +600,20 @@ nav{
 	background: #8100BD;
 	margin: 0 auto;
 	z-index: 4;
-	position: relative;
-	/*left: 38.5%;*/
-	top: 210px;
-	transform: rotate(90deg);
+	position: absolute;
+	left: 50%;
+	top: 600px;
+	transform: rotate(90deg) translateY(4000%);
 	box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
 }
 .solid_hor{
-	position: relative;
+	position: absolute;
 	width: 382px;
 	height: 4px;
 	margin:  510px auto 0;
 	z-index: 4;
+	left: 50%;
+	transform: translateX(-50%);
 	background: #8100BD;
 	box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
 }
@@ -591,8 +630,8 @@ nav{
 	z-index: 1;
 }
 .skills.card{
-	width: 797px;
-	height: 278px;
+	height: fit-content;
+    width: fit-content;
 	left: 50%;
 	transform: translateX(-50%);
 	top: 960px;
@@ -619,6 +658,124 @@ nav{
 	position: absolute;
 	left: -280px;
 	top: 350px;
+}
+@media (min-width: 481px) and (max-width: 1440px){
+	.aboutMe{
+		height: fit-content;
+	}
+	.for_adopt{
+		margin-top: -20px;
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		margin: 0 auto;
+		align-items: center;
+	}
+	.card{
+		position: static;
+		margin-bottom: 30px;
+			height: fit-content;
+    width: fit-content;
+	}
+	.skills.card{
+
+		transform: translateX(0);
+	}
+	.solid_vert,.solid_hor{
+		display: none;
+	}
+}
+@media (min-width: 481px) and (max-width: 990px){
+.skills .title {
+	white-space: inherit;
+}
+.skills ul:first-child {
+    margin-right: 14px;
+}	
+}
+@media (max-width: 480px){
+.aboutMe{
+		height: fit-content;
+	}
+	.word{
+		transform: scale(0.5);
+		margin-left: -100px;
+	}
+	.for_adopt{
+		margin-top: -20px;
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		margin: 0 auto;
+		align-items: center;
+	}
+	.card{
+		position: static;
+		margin-bottom: 30px;
+	}
+	.skills.card{
+		transform: translateX(0);
+	}
+	.solid_vert,.solid_hor, .me{
+		display: none;
+	}
+	.photo{
+		width: 180px;
+		height: 180px;
+	}
+	.card{
+		height: fit-content;
+		font-size: 16px;
+		padding: 0 30px 35px 30px;
+	}
+	.card .title{
+		font-size: 24px;
+		line-height: 130%;
+		margin: 20px 0px 25px 0;
+	}
+	.card span{
+		margin-bottom: 15px;
+    text-align: center;
+    line-height: 140%
+	}
+	.card li {
+    line-height: 140%;
+    font-weight: 500;
+}
+.card li:not(:last-child) {
+    margin-bottom: 15px;
+}
+.tringle_about{
+    position: absolute;
+    top: 32%;
+    left: -60%;
+    z-index: 1;
+    }
+    .tringle_about img{
+    transform: scale(0.7) rotate(20deg);
+    }
+    .circle_about{
+    position: absolute;
+    top: 45%;
+    right: -60%;
+    z-index: 1;
+    }
+    .circle_about img{
+    transform: scale(0.5);
+    }
+    .skills.card {
+    height: fit-content;
+    width: fit-content;
+}
+.skills .title {
+	white-space: inherit;
+}
+.about_list {
+    flex-direction: column;
+}
+.skills ul:first-child {
+    margin-bottom: 14px;
+}	
 }
 /*===============================================================*/
 
@@ -654,6 +811,7 @@ nav{
 	font-weight: 700;
 	color: #ffffff;
 	opacity: 90%;
+	white-space: nowrap;
 }
 .quality{
 	margin-top: 130px;
@@ -780,6 +938,84 @@ nav{
 	line-height: 24px;
 	text-align: center;
 }
+@media (min-width: 481px) and (max-width: 900px){
+.ring_block{
+    background-image: url();
+    background: #9400D8;
+    /* height: 300px; */
+    /* background-size: 100%; */
+    height: fit-content;
+    /* width: 100%; */
+    padding: 0 0 10px 0;
+}
+.title{
+	margin-top: 0;
+}
+.window_quality{
+	top: -30px;
+}
+}
+@media (max-width: 480px){
+	.qualities{
+		flex-direction: column;
+		align-items: center;
+		height: 900px;
+	}
+	.qualities span{
+		font-size: 32px;
+	}
+	.window_quality{
+		transform: scale(0.6);
+	}
+	.quality{
+		margin-top: 190px;
+		height: 60px;
+		width: fit-content;
+	}
+	.quality:nth-child(2){
+		margin-top: 300px;
+		height: 60px;
+		width: fit-content;
+		margin-top: 225px;
+	}
+	@keyframes animate_way {
+		0%{
+			transform: translate(-20%,0);
+		}
+		50%{
+			transform: translate(20%,0);
+		}
+		100%{
+			transform: translate(-20%,0);
+		}
+	}
+	/*.window_quality:hover~.ring_block {
+    transform: translate(-50%,0) scale(0.6);
+}*/
+.window_quality{
+	top: -100px;
+}	
+.ring_block{
+    background-image: url(../img/quality_rotate.svg);
+width: 350px;
+    	max-width: 350px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: -264px;
+    left: 50%;
+	transform: translate(-50%,0) scale(0.6);
+	opacity: 1;
+}
+.ring_block .title {
+    position: relative;
+    top: 80px;
+}
+.ring_block .subtitle {
+    margin: 100px 21px 45px 21px;
+    text-align: center;
+    font-size: 24px;
+}
+	}
 /*===============================================================*/
 
 /*==========================Portfolio============================*/
@@ -797,6 +1033,7 @@ nav{
 	transform-style: preserve-3d;
 	transform: skew(-22deg,12deg) scale(0.9);
 	transition: all 2s ease;
+	left: -10%;
 }
 .portf_card{
 	top: 290px;
@@ -812,6 +1049,7 @@ nav{
 	cursor: pointer;
 	transition: all 2s ease;
 	transform: translateZ(0px);
+	margin-right: 20px;
 
 }
 .portf_card::after{
@@ -987,6 +1225,57 @@ nav{
 	text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 1440px){
+
+.portf_frame{
+	margin-left: 20%;
+margin-top: 70px;
+		width: 80%;
+		height: 740px;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: skew(-22deg,12deg) scale(0.9);
+	transition: all 2s ease;
+	left: -10%;
+}
+}
+@media (max-width: 480px){
+	.portfolio {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+.portfolio svg{
+	position: absolute;
+	left: -8%;
+	top: -5%;
+}
+	.portf_frame{
+		margin-top:-100px;
+		width: 90%;
+		height: 500px;
+		margin-left: -20px;
+	}
+	.swap_card:nth-child(1){
+	top: 99%;
+	transition: all 1s ease 0.6s;
+}
+.swap_card:nth-child(2){
+	top: 66%;
+	transition: all 1s ease 0.4s;
+}
+.swap_card:nth-child(3){
+	top: 33%;
+	transition: all 1s ease 0.2s;
+}
+.swap_card:nth-child(4){
+	top: 0;
+	transition: all 1s ease;
+}
+}
 /*=============================================================*/
 
 /*=========================Effects=============================*/
@@ -1137,6 +1426,15 @@ nav{
 	100%{
 		transform: translateY(-884px);
 	}
+}
+@media (max-width: 480px){
+	.effects {
+    height: fit-content;
+}
+	.slider_frame{
+		margin-top: -40px;
+	transform: skewX(-15deg) scale(0.6) translateX(-350px);
+}
 }
 /*=============================================================*/
 
@@ -1311,6 +1609,59 @@ input[type="submit"]:hover{
 	width: 170px;
 	color: #e5a4ff;
 }
+@media (max-width: 1440px){
+.back_form .inputBox.textarea{
+	height: 250px;
+}
+}
+@media (max-width: 480px){
+	form{
+		width: 80%
+	}
+	.back_form{
+		height: 600px;
+		padding: 1px 15px 0;
+	}
+	.back_form h2{
+	margin-top: 20px;
+	font-size: 28px;
+}
+.back_form .row .col{
+	margin: 30px 0px 0px;
+}
+.back_form .inputBox{
+	height: 30px;
+}
+.back_form .inputBox input,
+.back_form .inputBox textarea{
+	font-size: 18px;
+}
+.back_form input:focus + .text,
+.back_form input:valid + .text{
+	top: -30px;
+}
+.back_form .inputBox .text{
+	line-height: 30px;
+	font-size: 22px;
+}
+::-webkit-input-placeholder{
+	font-size: 18px;
+	line-height: 29px;
+}
+.back_form .inputBox.textarea .line{
+	top: 28px;
+	height: 100%;
+}
+.back_form .inputBox.textarea{
+	height: 170px;
+}
+input[type="submit"]{
+	top: 27px;
+	font-size: 20px;
+	height: 40px;
+	width: 150px;
+}
+}
 /*===========================================================*/
 
 /*=========================Footer============================*/
@@ -1318,9 +1669,9 @@ footer{
 	margin-top: 30px;
 	background: #150a1c;
 	width: 100%;
-	    height: 377px;
-    z-index: 1;
-    padding: 70px 0px 46px;
+	height: 377px;
+	z-index: 1;
+	padding: 70px 0px 46px;
 	position: relative;
 }
 footer::before{
