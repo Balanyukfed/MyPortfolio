@@ -9,7 +9,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<title>Баланюк Никита - HTML верстальщик</title>
@@ -86,22 +86,22 @@
 			<nav>
 				<img src="" alt="">
 				<div class="nav_link">
-					<a href="">Обо мне</a>
-					<a href="">Портфолио</a>
-					<a href="">Эффекты</a>
+					<div class="first_link" href="">Обо мне</div>
+					<div class="sec_link" href="">Портфолио</div>
+					<div class="third_link" href="">Эффекты</div>
 				</div>
 			</nav>
 			<div class="header_info"><div class="header_info_block">
 				<span>Привет, меня зовут</span>
 				<h1>Баланюк Никита</h1>
 				<span>HTML - верстальщик</span>
-				<a href="" class="button_header"><span>Узнать больше</span></a>				
+				<div class="button_header"><span>Узнать больше</span></div>				
 			</div>
 		</div>
 	</div>
 </header>
 <div class="wrapper">
-	<div class="loader">
+	<!-- <div class="loader">
 		<div class="leftside">
 			<span>I'm a</span>
 		</div>
@@ -112,7 +112,7 @@
 				<li><span class="span3">Developer</span></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 	<div class="social">
 		<a href="https://www.instagram.com/i.haveoneidea/" target="_blank">
 			<svg id="social" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,17 +157,17 @@
 					<path d="M337.323 79L348.123 25.2H363.623L359.423 46.2H382.823L387.023 25.2H402.523L391.823 79H376.223L380.223 58.9H356.923L352.923 79H337.323Z" stroke="white" stroke-width="3" mask="url(#path-1-outside-1_119_51)"/>
 					<path d="M437.456 79.8C431.856 79.8 426.99 78.8 422.856 76.8C418.79 74.8 415.623 72 413.356 68.4C411.09 64.8 409.956 60.5667 409.956 55.7C409.956 49.7 411.29 44.3667 413.956 39.7C416.69 34.9667 420.423 31.2333 425.156 28.5C429.956 25.7667 435.456 24.4 441.656 24.4C446.923 24.4 451.456 25.4 455.256 27.4C459.056 29.3333 461.99 32.0667 464.056 35.6C466.19 39.0667 467.256 43.2333 467.256 48.1C467.256 49.5 467.156 50.9 466.956 52.3C466.823 53.7 466.623 55.0333 466.356 56.3H421.856L423.456 47.2H459.056L452.656 50C453.19 47 453.023 44.5 452.156 42.5C451.29 40.4333 449.89 38.8667 447.956 37.8C446.023 36.6667 443.69 36.1 440.956 36.1C437.556 36.1 434.656 36.9333 432.256 38.6C429.923 40.2 428.156 42.4333 426.956 45.3C425.756 48.1667 425.156 51.4 425.156 55C425.156 59.1333 426.29 62.2333 428.556 64.3C430.89 66.3 434.39 67.3 439.056 67.3C441.79 67.3 444.423 66.8667 446.956 66C449.49 65.1333 451.656 63.9 453.456 62.3L459.956 72.6C456.823 75.0667 453.29 76.9 449.356 78.1C445.49 79.2333 441.523 79.8 437.456 79.8Z" stroke="white" stroke-width="3" mask="url(#path-1-outside-1_119_51)"/>
 				</svg>
-				<div class="photo wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="200">
-
-				</div>
-				<div class="solid_vert wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="100"></div>
-				<div class="solid_hor wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="100"></div>
 				<div class="tringle_about wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s" data-wow-offset="10" data-wow-delay="1s">
 					<img src="img/big_tringle.svg" alt="">
 				</div>
 				<div class="circle_about wow animate__animated animate__fadeInRight" data-wow-duration="1.5s" data-wow-offset="10" data-wow-delay="1s">
 					<img src="img/big_circle.svg" alt="">
 				</div>
+				<div class="photo wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="200">
+				</div>
+				<div class="solid_vert wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="100"></div>
+				<div class="solid_hor wow animate__animated animate__fadeIn" data-wow-duration="1.5s" data-wow-offset="100"></div>
+				<div class="for_adopt">
 				<div class="pers_inf card wow animate__animated animate__fadeInLeft" data-wow-duration="1.5s"  data-wow-offset="300">
 					<div class="title">
 						Персональная <br>информация
@@ -208,6 +208,7 @@
 						</ul>
 					</div>
 				</div>
+				</div>
 			</div>
 			<div class="qualities">
 				<span>Личные качества</span>
@@ -216,7 +217,7 @@
 						<img src="img/ring1.svg" alt="">
 					</div>
 					<div class="ring_block">
-						<div class="icon"></div>
+						
 						<div class="title">
 							Креативность
 						</div>
@@ -230,7 +231,7 @@
 						<img src="img/ring2.svg" alt="">
 					</div>
 					<div class="ring_block">
-						<div class="icon"></div>
+						
 						<div class="title">
 							Увлеченность
 						</div>
@@ -244,7 +245,7 @@
 						<img src="img/ring3.svg" alt="">
 					</div>
 					<div class="ring_block">
-						<div class="icon"></div>
+						<!-- <div class="icon"></div> -->
 						<div class="title">
 							Перфекционизм
 						</div>
