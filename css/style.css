@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	z-index: 30;
 }
 .container{
-	padding: 15px;
+	padding: 15px 15px 0 15px;
 	margin: 0 auto;
 	max-width: 1440px;
 	display: flex;
@@ -1350,4 +1350,5 @@ footer .container{
 	font-size: 20px;
 	text-align: center;
 	font-weight: 500;
+	margin-bottom: 25px;
 }
