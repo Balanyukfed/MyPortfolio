@@ -46,6 +46,9 @@ function setMouseParallax(){
 //Перемещение массива фигур с учетом массива коэффициентов
 for(i = 0; i < figur.length; i++){
 	figur[i].style.cssText = `Transform: translate(${positionX*arrayForMove[i]}%,${positionY*arrayForMove[i]}%) rotate(${rotate/150*arrayForMove[i]}deg);`;
+	if(window.screen.width<=480){
+		figur[i].style.cssText = `Transform: translate(${positionX*arrayForMove[i]}%,${positionY*arrayForMove[i]}%) rotate(${rotate/150*arrayForMove[i]}deg) scale(0.5);`;
+	}
 }
 requestAnimationFrame(setMouseParallax);
 }
@@ -88,6 +91,9 @@ for (let i = 0; i<portfCard.length; i++){
 //при нажатии добавление класса или удаление, чтоб работать дальше с картами		
 if(!document.querySelector('.portf_frame').classList.contains('frameList')){
 	document.querySelector('.portf_frame').classList.add('frameList');
+	if(window.screen.width<=480){
+	document.querySelector('.portf_frame').style.height = 1000 + 'px';
+}
 	for (let i = 0; i<portfCard.length; i++){
 		portfCard[i].classList.add('swap_card');
 
@@ -106,6 +112,9 @@ if(!document.querySelector('.portf_frame').classList.contains('frameList')){
 }
 else {
 	document.querySelector('.portf_frame').classList.remove('frameList');
+	if(window.screen.width<=480){
+	document.querySelector('.portf_frame').style.height = 500 + 'px';
+}
 	for (let i = 0; i<portfCard.length; i++){
 		portfCard[i].classList.remove('swap_card','portf_card_focus');
 		portfCard[i].style.animationPlayState = 'running';
@@ -125,7 +134,7 @@ for(let i = 0; i < row.length-1; i++){
 	focused[i].addEventListener('mousemove', rotate);
 	focused[i].addEventListener('mouseout', goBack);
 
-	function rotate(event){
+	function rotate(){
 		const halfHeight = row[i].offsetHeight / 2;
 		const halfWidth = row[i].offsetWidth / 2;
 
@@ -135,6 +144,7 @@ for(let i = 0; i < row.length-1; i++){
 		row[i].style.transform = 'rotateX('+-(event.offsetY - halfHeight)/height+'deg) rotateY('+(event.offsetX - halfWidth)/width+'deg)';
 		line[i].style.boxShadow = '-8px 8px 25px rgba(0, 0, 0, 0.5)';
 	}
+
 
 	function goBack() {
 		row[i].style.transform = 'rotateX(0deg) rotateY(0deg)';
@@ -219,8 +229,59 @@ form.addEventListener('submit', function(evt){
         console.log(request.response);
         alert('Заявка успешно отправлена');
     });
+    // request.open('POST', 'http://nekitg2i.beget.tech/send.php', true);
     request.open('POST', 'https://balanyuknikita.ru/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-/*request.setRequestHeader('From', '<no-reply@domain.by> + encodeURIComponent(formData.email) \r\n');*/
     request.send('name=' + encodeURIComponent(formData.name) + '&email=' +  encodeURIComponent(formData.email) + '&title=' +  encodeURIComponent(formData.title) + '&comment=' +  encodeURIComponent(formData.comment));
 });
+
+//============================================
+	 let portfolio = document.querySelector('.portf_frame');
+
+if(window.screen.height<768 || window.screen.width<1366){
+let logoSize = document.querySelector('.logo_shadow');
+
+logoSize.style.cssText = `Transform: scale(${window.screen.height / 1080 + 0.1})`;
+portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${window.screen.width / 1920 })`;
+}
+
+if(window.screen.width<=480){
+let logoSize = document.querySelector('.logo_shadow');
+
+logoSize.style.cssText = `Transform: scale(${window.screen.width / 1920 + 0.2})`;
+ portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${(window.screen.width / 1920) + 0.2})`;
+}
+
+//=====================================================
+let buttonHeader = document.querySelector('.button_header');
+let firstLink = document.querySelector('.first_link');
+let secondLink = document.querySelector('.sec_link');
+let thirdLink = document.querySelector('.third_link');
+
+buttonHeader.addEventListener('click', scrollfirst);
+firstLink.addEventListener('click', scrollfirst);
+secondLink.addEventListener('click', scrollSecond);
+thirdLink.addEventListener('click', scrollThird);
+
+function scrollfirst(){
+	window.scrollTo({
+	top: 1000,
+    left: 0,
+    behavior : "smooth"
+    });
+}
+function scrollSecond(){
+	window.scrollTo({
+	top: 3500,
+    left: 0,
+    behavior : "smooth"
+    });
+}
+function scrollThird(){
+	window.scrollTo({
+	top: 4600,
+    left: 0,
+    behavior : "smooth"
+    });
+}
+
