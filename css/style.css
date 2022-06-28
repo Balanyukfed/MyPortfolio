@@ -1006,6 +1006,7 @@ width: 350px;
     left: 50%;
 	transform: translate(-50%,0) scale(0.6);
 	opacity: 1;
+	background: #9400D8;
 }
 .ring_block .title {
     position: relative;
