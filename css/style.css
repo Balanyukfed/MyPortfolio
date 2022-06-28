@@ -28,7 +28,7 @@ html, body{
 	color: #fff;
 }
 html{
-	/*overflow-y: hidden;*/
+	overflow-y: hidden;
 }
 input, button, textarea{font-family: inherit;}
 
@@ -189,6 +189,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 		border-left: 4px solid rgb(136, 21, 189, 94%);
 	}
 }
+
 /*===============================================================*/
 
 /*===========================Header==============================*/
@@ -207,12 +208,12 @@ header .container{
 }
 .logo{
 	position: absolute;
-	animation: 	logoSwap 2s ease 3.5s /*13.5s*/ forwards;
+	animation: 	logoSwap 2s ease /*3.5s*/ 13.5s forwards;
 }
 .logo_shadow{
 	stroke-dashoffset: 3000;
 	stroke-dasharray: 3000;
-	animation: logo 3s ease /*10.5s*/ forwards;
+	animation: logo 3s ease 10.5s forwards;
 }
 @keyframes logo{
 	0%{
@@ -250,7 +251,7 @@ nav{
 	justify-content: space-between;
 	flex-grow: 1;
 	opacity: 0;
-	animation: nav_animation 2s ease 3.5s /*13.5s*/ forwards;
+	animation: nav_animation 2s ease /*3.5s*/ 13.5s forwards;
 }
 @keyframes nav_animation{
 	to{
@@ -314,7 +315,7 @@ nav{
 #social circle{
 	stroke-dashoffset: 320;
 	stroke-dasharray: 320;
-	animation: word1_anim 2s ease 3.5s/*13.5s*/ forwards;
+	animation: word1_anim 2s ease/* 3.5s*/ 13.5s forwards;
 }
 .header_info{
 	position: absolute;
@@ -359,8 +360,8 @@ nav{
 .header_info .header_info_block{
 	transform: translateX(100%);
 	opacity: 0;
-	animation: nav_animation 2s ease-in-out 3.5s /*13.5s*/ forwards,
-	header_info_animation 2s ease 3s /*13s*/ forwards;
+	animation: nav_animation 2s ease-in-out /*3.5s */ 13.5s forwards,
+	header_info_animation 2s ease /*3s*/ 13s forwards;
 }
 @keyframes header_info_animation{
 	to{
@@ -401,7 +402,7 @@ nav{
 	height: 100vh;
 	position: absolute;
 	opacity: 0;
-	animation: nav_animation 2s ease 3.5s /*13.5s*/ forwards;
+	animation: nav_animation 2s ease /*3.5s*/ 13.5s forwards;
 }
 .figur{
 	position: absolute;
@@ -481,6 +482,36 @@ nav{
 	.header_info .header_info_block{
 		transform: translateY(100%);	
 	}
+	.loader{
+	display: none;
+}
+.logo{
+	animation: 	logoSwap 2s ease 3s forwards;
+}
+.logo_shadow{
+	animation: logo 3s ease 0.5s forwards;
+}
+.nav_link{
+	animation: nav_animation 2s ease 3.5s forwards;
+}
+#social path,
+#social rect,
+#social circle{
+	animation: word1_anim 2s ease 3.5s /*13.5s*/ forwards;
+}
+.header_info .header_info_block{
+	transform: translateX(100%);
+	opacity: 0;
+	animation: nav_animation 2s ease-in-out 3.5s  /*13.5s*/ forwards,
+	header_info_animation 2s ease 3s /*13s*/ forwards;
+}
+.figurs{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	opacity: 0;
+	animation: nav_animation 2s ease 3.5s /*13.5s*/ forwards;
+}
 }
 
 /*===============================================================*/
