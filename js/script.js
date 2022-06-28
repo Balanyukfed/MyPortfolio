@@ -6,6 +6,10 @@ setTimeout( function() {
 setTimeout( function() {
 	loaderVisible.style.cssText = 'overflow: visible;'}, 13500)
 
+setTimeout( function() {
+if(window.screen.width<=480){
+	loaderVisible.style.cssText = 'overflow: visible;'}}, 3500)
+
 
 //=======================Скрытие Header при скроле====================
 let header = document.querySelector('header');
