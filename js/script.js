@@ -217,9 +217,10 @@ form.addEventListener('submit', function(evt){
     
     request.addEventListener('load',function(){
         console.log(request.response);
-        alert('Ваша заявка успешно отправлена!!!');
+        alert('Заявка успешно отправлена');
     });
     request.open('POST', 'https://balanyuknikita.ru/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.setRequestHeader('From', '<no-reply@domain.by> + encodeURIComponent(formData.email) \r\n');
     request.send('name=' + encodeURIComponent(formData.name) + '&email=' +  encodeURIComponent(formData.email) + '&title=' +  encodeURIComponent(formData.title) + '&comment=' +  encodeURIComponent(formData.comment));
 });
