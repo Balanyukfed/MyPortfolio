@@ -571,6 +571,14 @@ nav{
 	margin: 20px auto 0;
 	z-index: 4;
 	position: relative;
+	overflow: hidden;
+}
+.photo img{
+width: 88%;
+    position: absolute;
+    bottom: -8%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .card{
 	background: rgba(255,255,255,0.03);
