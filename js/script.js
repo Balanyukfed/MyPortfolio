@@ -302,3 +302,8 @@ function scrollThird(){
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
+
+document.querySelector('.small_logo img').addEventListener('click', practic);
+function practic() {
+	document.querySelector('.practic').style.cssText = 'Transform: scale(1); opacity: 1; ';
+}
