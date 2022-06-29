@@ -1747,3 +1747,24 @@ footer .container{
 	font-weight: 500;
 	margin-bottom: 25px;
 }
+
+
+.practic{
+    position: fixed;
+    transform: scale(0);
+    bottom: 0;
+    opacity: 0;
+    background: #5B0485;
+    height: 100vh;
+    width: 100%;
+    z-index: 30;
+    transition: all 1s ease;
+}
+.practic span{
+    display: block;
+    font-size: 120px;
+    text-align: center;
+    margin: 400px auto;
+    font-weight: 700;
+}
+}
