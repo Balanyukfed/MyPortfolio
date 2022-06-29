@@ -268,24 +268,37 @@ secondLink.addEventListener('click', scrollSecond);
 thirdLink.addEventListener('click', scrollThird);
 
 function scrollfirst(){
-	window.scrollTo({
-	top: 1000,
+	// if(window.screen.width>480){
+	// window.scrollTo({
+	// top: 1000,
+ //    left: 0,
+ //    behavior : "smooth"
+ //    });
+ //    }
+ //    else{
+    	window.scrollTo({
+	top: offset(word[0])+window.innerHeight-50,
     left: 0,
     behavior : "smooth"
     });
-}
+    }
+
+// }
 function scrollSecond(){
 	window.scrollTo({
-	top: 3500,
+	top: offset(word[1])+window.innerHeight-50,
     left: 0,
     behavior : "smooth"
     });
 }
 function scrollThird(){
 	window.scrollTo({
-	top: 4600,
+	top: offset(word[2])+window.innerHeight-50,
     left: 0,
     behavior : "smooth"
     });
 }
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
