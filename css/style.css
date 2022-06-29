@@ -1048,6 +1048,9 @@ width: 350px;
     text-align: center;
     font-size: 24px;
 }
+.window_quality:hover~.ring_block{
+	transform: translate(-50%,0) scale(0.6);
+}
 	}
 /*===============================================================*/
 
