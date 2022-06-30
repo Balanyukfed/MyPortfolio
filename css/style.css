@@ -68,7 +68,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 100px;
 	font-weight: 600;
 	letter-spacing: 2px;
-	font-family: 'Averta Demo PE';
+/* 	font-family: 'Averta Demo PE'; */
 }
 .leftside{
 	position: fixed;
