@@ -68,7 +68,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 100px;
 	font-weight: 600;
 	letter-spacing: 2px;
-/* 	font-family: 'Averta Demo PE'; */
+/*	font-family: 'Averta Demo PE';*/
 }
 .leftside{
 	position: fixed;
@@ -1200,7 +1200,6 @@ width: 350px;
 	left: 10px;
 	right: 10px;
 	bottom: 10px;
-	
 	border-radius: 22px;
 	transform: translateZ(-1px);
 	background-size: 104%;
@@ -1209,64 +1208,38 @@ width: 350px;
 }
 .swap_card:nth-child(1) .card_overflow::after{
 	background-image: url("../img/portf2.png");
-	
+	transition: all 1s ease;
 }
 .swap_card:nth-child(2) .card_overflow::after{
 	background-image: url("../img/portf3_bg.svg");
-
+transition: all 1s ease;
 }
 .swap_card:nth-child(3) .card_overflow::after{
 	background-image: url("../img/portf4_bg.svg");
-
+transition: all 1s ease;
 }
 .swap_card:nth-child(4) .card_overflow::after{
 	background-image: url("../img/portf1_bg.svg");
-
+transition: all 1s ease;
 }
 .portf_card_focus:hover .portf_logo{
 	transform: translateY(-100%);
 }
 .portf_card a{
 	display: none;
-	height: 40px;
-	width: 160px;
+	height: 100%;
+	width: 100%;
 	font-size: 24px;
 	font-weight: 700;
-	color: #d4d4d4;
 	border-radius: 20px;
-	transform: translateZ(0px);
 	position: absolute;
-	bottom: 15px;
-	right: 15px;
 	z-index: 3;
 	text-align: center;
-	line-height: 35px;
-	text-shadow: -4px 4px 8px rgb(0 0 0 / 25%);
-	box-shadow: -4px 4px 8px rgb(0 0 0 / 25%);
-	background: linear-gradient(219.49deg, #adadad20 15.26%, #87878720 85.27%);
-	animation: card_check 4s linear infinite;
-}
-@keyframes card_check{
-	0%{
-		color: #f2f2f2;
-	}
-	50%{
-		color: #ccc;
-	}
-	100%{
-		color: #f2f2f2;
-	}
 }
 .portf_card span{
-	font-size: 120px;
-	font-weight: 700;
-	color: #d4d4d4;
 	position: absolute;
-	top: -40px;
-	left: -40px;
 	z-index: 3;
 	transform: translateZ(10px);
-	text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 1440px){
@@ -1376,12 +1349,7 @@ margin-top: 70px;
 .column3 .effect:nth-child(7){
 	background-image: url("../img/gif/gif1.svg");
 }
-.column1 .effect:nth-child(1):hover,
-.column1 .effect:nth-child(5):hover,
-.column3 .effect:nth-child(3):hover,
-.column3 .effect:nth-child(7):hover{
-	background-image: url("../img/gif/gif1.gif");
-}
+
 .column2 .effect:nth-child(3),
 .column2 .effect:nth-child(7),
 .column4 .effect:nth-child(2),
@@ -1389,6 +1357,47 @@ margin-top: 70px;
 .column3 .effect:nth-child(1),
 .column3 .effect:nth-child(5){
 	background-image: url("../img/gif/gif2.svg");
+}
+
+.column1 .effect:nth-child(2),
+.column1 .effect:nth-child(6),
+.column3 .effect:nth-child(4){
+	background-image: url("../img/gif/gif3.svg");
+}
+
+.column1 .effect:nth-child(4),
+.column3 .effect:nth-child(2),
+.column3 .effect:nth-child(6){
+	background-image: url("../img/gif/gif4.svg");
+}
+
+.column2 .effect:nth-child(2),
+.column2 .effect:nth-child(6),
+.column4 .effect:nth-child(1),
+.column4 .effect:nth-child(5){
+	background-image: url("../img/gif/gif5.svg");
+}
+
+.column1 .effect:nth-child(3),
+.column1 .effect:nth-child(7),
+.column2 .effect:nth-child(1),
+.column2 .effect:nth-child(5),
+.column4 .effect:nth-child(4){
+	background-image: url("../img/gif/gif6.svg");
+}
+
+.column2 .effect:nth-child(4),
+.column4 .effect:nth-child(3),
+.column4 .effect:nth-child(7){
+	background-image: url("../img/gif/gif7.svg");
+}
+
+@media (min-width: 481px){
+	.column1 .effect:nth-child(1):hover,
+.column1 .effect:nth-child(5):hover,
+.column3 .effect:nth-child(3):hover,
+.column3 .effect:nth-child(7):hover{
+	background-image: url("../img/gif/gif1.gif");
 }
 .column2 .effect:nth-child(3):hover,
 .column2 .effect:nth-child(7):hover,
@@ -1398,44 +1407,21 @@ margin-top: 70px;
 .column3 .effect:nth-child(5):hover{
 	background-image: url("../img/gif/gif2.gif");
 }
-.column1 .effect:nth-child(2),
-.column1 .effect:nth-child(6),
-.column3 .effect:nth-child(4){
-	background-image: url("../img/gif/gif3.svg");
-}
 .column1 .effect:nth-child(2):hover,
 .column1 .effect:nth-child(6):hover,
 .column3 .effect:nth-child(4):hover{
 	background-image: url("../img/gif/gif3.gif");
-}
-.column1 .effect:nth-child(4),
-.column3 .effect:nth-child(2),
-.column3 .effect:nth-child(6){
-	background-image: url("../img/gif/gif4.svg");
 }
 .column1 .effect:nth-child(4):hover,
 .column3 .effect:nth-child(2):hover,
 .column3 .effect:nth-child(6):hover{
 	background-image: url("../img/gif/gif4.gif");
 }
-.column2 .effect:nth-child(2),
-.column2 .effect:nth-child(6),
-.column4 .effect:nth-child(1),
-.column4 .effect:nth-child(5){
-	background-image: url("../img/gif/gif5.svg");
-}
 .column2 .effect:nth-child(2):hover,
 .column2 .effect:nth-child(6):hover,
 .column4 .effect:nth-child(1):hover,
 .column4 .effect:nth-child(5):hover{
 	background-image: url("../img/gif/gif5.gif");
-}
-.column1 .effect:nth-child(3),
-.column1 .effect:nth-child(7),
-.column2 .effect:nth-child(1),
-.column2 .effect:nth-child(5),
-.column4 .effect:nth-child(4){
-	background-image: url("../img/gif/gif6.svg");
 }
 .column1 .effect:nth-child(3):hover,
 .column1 .effect:nth-child(7):hover,
@@ -1444,15 +1430,11 @@ margin-top: 70px;
 .column4 .effect:nth-child(4):hover{
 	background-image: url("../img/gif/gif6.gif");
 }
-.column2 .effect:nth-child(4),
-.column4 .effect:nth-child(3),
-.column4 .effect:nth-child(7){
-	background-image: url("../img/gif/gif7.svg");
-}
 .column2 .effect:nth-child(4):hover,
 .column4 .effect:nth-child(3):hover,
 .column4 .effect:nth-child(7):hover{
 	background-image: url("../img/gif/gif7.gif");
+}
 }
 
 @keyframes slider_animation_down{
@@ -1746,25 +1728,4 @@ footer .container{
 	text-align: center;
 	font-weight: 500;
 	margin-bottom: 25px;
-}
-
-
-.practic{
-    position: fixed;
-    transform: scale(0);
-    bottom: 0;
-    opacity: 0;
-    background: #5B0485;
-    height: 100vh;
-    width: 100%;
-    z-index: 30;
-    transition: all 1s ease;
-}
-.practic span{
-    display: block;
-    font-size: 120px;
-    text-align: center;
-    margin: 20% auto;
-    font-weight: 700;
-}
 }
