@@ -7,8 +7,8 @@ setTimeout( function() {
 	loaderVisible.style.cssText = 'overflow: visible;'}, 13500)
 
 setTimeout( function() {
-if(window.screen.width<=480){
-	loaderVisible.style.cssText = 'overflow: visible;'}}, 3500)
+	if(window.screen.width<=480){
+		loaderVisible.style.cssText = 'overflow: visible;'}}, 3500)
 
 
 //=======================Скрытие Header при скроле====================
@@ -88,6 +88,7 @@ for (let i = 0; i<ring.length; i++){
 //===============Создание распадающегося меню порфтолио===============
 let portfCard = document.querySelectorAll('.portf_card');
 let buttonCard = document.querySelectorAll('.button_portf');
+let moveLogo = document.querySelectorAll('.portf_logo');
 
 for (let i = 0; i<portfCard.length; i++){
 	portfCard[i].addEventListener("click" , () => {
@@ -96,14 +97,20 @@ for (let i = 0; i<portfCard.length; i++){
 if(!document.querySelector('.portf_frame').classList.contains('frameList')){
 	document.querySelector('.portf_frame').classList.add('frameList');
 	if(window.screen.width<=480){
-	document.querySelector('.portf_frame').style.height = 1000 + 'px';
-}
+		document.querySelector('.portf_frame').style.height = 1000 + 'px';
+	}
+
 	for (let i = 0; i<portfCard.length; i++){
 		portfCard[i].classList.add('swap_card');
 
 		//при наведении убирать занавеску карты
-		setTimeout( function() {
-			portfCard[i].classList.add('portf_card_focus')}, 1000)
+		if(window.screen.width<=480){
+				setTimeout( function() {
+					moveLogo[i].style.cssText = 'transform: translateY(-100%);'}, 1000)
+		} else {
+			setTimeout( function() {
+			portfCard[i].classList.add('portf_card_focus')}, 1000)	
+		}
 
 		//убрать анимации смещения карт
 		portfCard[i].style.animationPlayState = 'paused';
@@ -117,8 +124,8 @@ if(!document.querySelector('.portf_frame').classList.contains('frameList')){
 else {
 	document.querySelector('.portf_frame').classList.remove('frameList');
 	if(window.screen.width<=480){
-	document.querySelector('.portf_frame').style.height = 500 + 'px';
-}
+		document.querySelector('.portf_frame').style.height = 500 + 'px';
+	}
 	for (let i = 0; i<portfCard.length; i++){
 		portfCard[i].classList.remove('swap_card','portf_card_focus');
 		portfCard[i].style.animationPlayState = 'running';
@@ -176,10 +183,10 @@ window.addEventListener('scroll', trackScroll);
 
 //Рсчет расстояния элемента от верха и определение длины скролла для запуска анимации
 function offset(el) {
-    var rect = el.getBoundingClientRect(),
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    let topDist = {top:rect.top + scrollTop - (window.innerHeight * 0.96)}
-    return (topDist.top);
+	var rect = el.getBoundingClientRect(),
+	scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	let topDist = {top:rect.top + scrollTop - (window.innerHeight * 0.96)}
+	return (topDist.top);
 }
 
 function trackScroll() {
@@ -218,21 +225,21 @@ function trackScroll() {
 let form = document.querySelector('#myForm');
 
 form.addEventListener('submit', function(evt){
-    evt.preventDefault();
-    
-    let formData = {
-        name: document.querySelector('input[name="name"]').value,
-        email: document.querySelector('input[name="email"]').value,
-        title: document.querySelector('input[name="title"]').value,
-        comment: document.querySelector('textarea[name="comment"]').value
-    };
-    
-    let request = new XMLHttpRequest();
-    
-    request.addEventListener('load',function(){
-        console.log(request.response);
-        alert('Заявка успешно отправлена');
-    });
+	evt.preventDefault();
+
+	let formData = {
+		name: document.querySelector('input[name="name"]').value,
+		email: document.querySelector('input[name="email"]').value,
+		title: document.querySelector('input[name="title"]').value,
+		comment: document.querySelector('textarea[name="comment"]').value
+	};
+
+	let request = new XMLHttpRequest();
+
+	request.addEventListener('load',function(){
+		console.log(request.response);
+		alert('Заявка успешно отправлена');
+	});
     // request.open('POST', 'http://nekitg2i.beget.tech/send.php', true);
     request.open('POST', 'https://balanyuknikita.ru/send.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -240,20 +247,20 @@ form.addEventListener('submit', function(evt){
 });
 
 //============================================
-	 let portfolio = document.querySelector('.portf_frame');
+let portfolio = document.querySelector('.portf_frame');
 
 if(window.screen.height<768 || window.screen.width<1366){
-let logoSize = document.querySelector('.logo_shadow');
+	let logoSize = document.querySelector('.logo_shadow');
 
-logoSize.style.cssText = `Transform: scale(${window.screen.height / 1080 + 0.1})`;
-portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${window.screen.width / 1920 })`;
+	logoSize.style.cssText = `Transform: scale(${window.screen.height / 1080 + 0.1})`;
+	portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${window.screen.width / 1920 })`;
 }
 
 if(window.screen.width<=480){
-let logoSize = document.querySelector('.logo_shadow');
+	let logoSize = document.querySelector('.logo_shadow');
 
-logoSize.style.cssText = `Transform: scale(${window.screen.width / 1920 + 0.2})`;
- portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${(window.screen.width / 1920) + 0.2})`;
+	logoSize.style.cssText = `Transform: scale(${window.screen.width / 1920 + 0.2})`;
+	portfolio.style.cssText = `Transform: skew(-22deg,12deg) scale(${(window.screen.width / 1920) + 0.2})`;
 }
 
 //=====================================================
@@ -276,34 +283,29 @@ function scrollfirst(){
  //    });
  //    }
  //    else{
-    	window.scrollTo({
-	top: offset(word[0])+window.innerHeight-50,
-    left: 0,
-    behavior : "smooth"
-    });
-    }
+ 	window.scrollTo({
+ 		top: offset(word[0])+window.innerHeight-50,
+ 		left: 0,
+ 		behavior : "smooth"
+ 	});
+ }
 
 // }
 function scrollSecond(){
 	window.scrollTo({
-	top: offset(word[1])+window.innerHeight-50,
-    left: 0,
-    behavior : "smooth"
-    });
+		top: offset(word[1])+window.innerHeight-50,
+		left: 0,
+		behavior : "smooth"
+	});
 }
 function scrollThird(){
 	window.scrollTo({
-	top: offset(word[2])+window.innerHeight-50,
-    left: 0,
-    behavior : "smooth"
-    });
+		top: offset(word[2])+window.innerHeight-50,
+		left: 0,
+		behavior : "smooth"
+	});
 }
 
 window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
-
-document.querySelector('.small_logo img').addEventListener('click', practic);
-function practic() {
-	document.querySelector('.practic').style.cssText = 'Transform: scale(1); opacity: 1; ';
+	window.scrollTo(0, 0);
 }
