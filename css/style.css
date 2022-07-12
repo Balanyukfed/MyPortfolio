@@ -1215,7 +1215,7 @@ width: 350px;
 transition: all 1s ease;
 }
 .swap_card:nth-child(3) .card_overflow::after{
-	background-image: url("../img/portf4_bg.svg");
+	background-image: url("../img/portf4.png");
 transition: all 1s ease;
 }
 .swap_card:nth-child(4) .card_overflow::after{
